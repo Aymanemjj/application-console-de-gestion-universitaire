@@ -62,11 +62,14 @@ class Admin extends User{
 
 
 
-    public function CRUDStudents($action){
+    public function CRUDStudents($action, $choice){
         $data= 0;
         switch ($action) {
             case 'creat':
-                $this->creatStudent($data);
+                if ($choice=="student"||$choice=="formateur") {
+                    $this->creatUser();
+                }
+                
                 break;
             case 'read':
                 $this->readStudent();
@@ -82,10 +85,163 @@ class Admin extends User{
         }
     }
 
-    public function creatStudent(){
+    public function creatUser(){
+
         global $connection;
+
+        $user=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         $id = $this->insertUser();
-        $sql = "INSERT INTO etudiants (id, firstname, lastname) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO admins (id, firstname, lastname) VALUES (?, ?, ?)";
         $stmt = $connection->prepare($sql);
         $stmt->execute([
             $id,
@@ -96,7 +252,7 @@ class Admin extends User{
 
     public function readStudent(){
         global $connection;
-        $sql = "SELECT  ";
+        $sql = "SELECT   ";
     }
 
 }

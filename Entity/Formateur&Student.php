@@ -6,7 +6,6 @@ class Formateur extends User
 {
 
     /* Properties */
-
     /* Same Properties as User +*/
     private string $firstname;
     private string $lastname;
