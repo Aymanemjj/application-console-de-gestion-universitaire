@@ -2,31 +2,25 @@
 
 class Department
 {
-
-    /* Properties */
-
     private string $name;
+
     private string $description;
-    private string $cours;
 
-    /* Constructor */
+    private array $coursList = [];
 
-    public function __construct($name, $description, $cours)
+    public function __construct(string $name, string $description, Cours $cours)
     {
         $this->name = $name;
         $this->description = $description;
-        $this->cours = $cours;
+        array_push($this->coursList, $cours);
     }
-
-    /* Getters & Setters */
-
 
 
 
     /**
      * Get the value of name
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -36,7 +30,7 @@ class Department
      *
      * 
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->name = $name;
     }
@@ -44,7 +38,7 @@ class Department
     /**
      * Get the value of description
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -54,7 +48,7 @@ class Department
      *
      * 
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->description = $description;
     }
@@ -62,9 +56,9 @@ class Department
     /**
      * Get the value of cours
      */
-    public function getCours()
+    public function getCours(): array
     {
-        return $this->cours;
+        return $this->coursList;
     }
 
     /**
@@ -72,8 +66,8 @@ class Department
      *
      * 
      */
-    public function setCours($cours)
+    public function setCours(Cours $cours)
     {
-        $this->cours = $cours;
+        array_push($this->coursList, $cours);
     }
 }
