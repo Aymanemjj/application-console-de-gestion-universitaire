@@ -1,10 +1,16 @@
 <?php
+include 'Repository/DepartmentRepository.php';
+include 'Entity/Departement.php';
+include 'Database/DatabaseConnection.php';
+include 'Service/DepartementService.php';
 
 include("Abstract\Person.php");
 include("Entity\users.php");
 
+$db = new DatabaseConnection();
+$repo = new DepartmentRepository($db);
+$departement = new DepartementService($repo);
 
-include("Database\DatabaseConnection.php");
 include("Database\login.php");
 include("Entity\Gusers.php");
 

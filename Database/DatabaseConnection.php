@@ -22,8 +22,4 @@ class DatabaseConnection
     {
         return $this->pdo;
     }
-
 }
-
-
-
